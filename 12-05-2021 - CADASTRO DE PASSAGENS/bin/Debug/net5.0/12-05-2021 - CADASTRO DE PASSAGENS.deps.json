@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "12-05-2021 - CADASTRO DE PASSAGENS/1.0.0": {
+        "runtime": {
+          "12-05-2021 - CADASTRO DE PASSAGENS.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "12-05-2021 - CADASTRO DE PASSAGENS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

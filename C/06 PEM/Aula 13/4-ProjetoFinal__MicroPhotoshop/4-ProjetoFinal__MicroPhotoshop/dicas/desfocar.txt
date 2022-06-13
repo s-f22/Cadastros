@@ -1,0 +1,28 @@
+Código para borrar (ainda simples):
+
+//tB é o tamanho do borrão, um número entre 1 e 10 que dá o quão borrada ficará a imagem
+
+int** borrar(int** original, int linhas, int colunas, int tB)
+{	int l, c;
+	//criando a matriz nova dinamicamente
+	int **nova, i;
+	nova = (int **) malloc(linhas * sizeof(int *));
+	for(i=0; i<linhas; i++)
+		nova[i] = (int *) malloc(colunas * sizeof(int));
+	
+	for(l=tB; l<linhas-tB; l++)
+		for(c=tB; c<colunas-tB; c++)
+			nova[l][c] = (original[l][c] + original[l+tB][c]
+				+ original[l-tB][c] + original[l][c+tB]
+				+ original[l][c-tB])/5;
+	return nova;
+}
+
+
+
+
+// lá no main():
+			case '7':
+				mat = borrar(mat, linhas, colunas, tamanhoBorrao);		
+				break;
+			........

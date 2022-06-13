@@ -1,0 +1,41 @@
+Código para girar uma imagem:
+
+int ** girar (int** original, int * plinhas, int * pcolunas)
+{	int l, c;
+	//criando a matriz nova dinamicamente
+	int **nova, i, L = *pcolunas, C = *plinhas;
+	nova = (int **) malloc(L * sizeof(int *));
+	for(i=0; i<L; i++)
+		nova[i] = (int *) malloc(C * sizeof(int));
+	
+	//fazer a transposição
+	for(l=0; l<L; l++)
+		for(c=0; c<C; c++)
+			nova[l][c] = original[c][l];
+	
+	//espelhar horizontalmente
+	espelharH (nova, L, C);
+	*plinhas = L;
+	*pcolunas = C;
+	return nova;
+}
+
+void espelharH(int** original, int linhas, int colunas)
+{	int l,c,aux,j;
+	for(l=0; l<linhas; l++)
+		for(c=0, j=colunas-1; c<colunas/2; c++, j--)
+		{	aux = original[l][c];
+			original[l][c] = original[l][j];
+			original[l][j] = aux;
+		}
+}
+........
+........
+
+// lá no main():
+			....	
+				case 'a':
+				mat = girar(mat, &linhas, &colunas);
+				break;
+			 	
+ 

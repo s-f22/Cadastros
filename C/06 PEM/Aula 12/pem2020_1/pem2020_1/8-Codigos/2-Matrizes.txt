@@ -1,0 +1,20 @@
+Vamos recordar alguns aspectos do uso e aplicações de matrizes.
+A maioria dos algoritmos usa repetições encadeadas, sendo que uma varia o índice de linha e a outra varia o índice de coluna para acessar todos os elementos da matriz.
+Observe isso no exemplo:
+
+#include<stdio.h>
+int main()
+{	int matriz[2][3] = {{3, 6, 9},
+				    {4, 2, 8}};
+	int l, c;
+	
+	for(l=0; l<2; l++)
+	{	for(c=0; c<3; c++)
+		{	printf( "%d\t", matriz[l][c]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
+

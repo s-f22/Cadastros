@@ -1,0 +1,13 @@
+#include <stdio.h>
+void bomba(int N)
+{   if(N > 0)
+    {   printf("%d - ", N);
+        bomba(N-1);
+    }
+    else printf("BUUUMMMM!");
+}
+
+int main()
+{   bomba(10);
+    return 0;
+}

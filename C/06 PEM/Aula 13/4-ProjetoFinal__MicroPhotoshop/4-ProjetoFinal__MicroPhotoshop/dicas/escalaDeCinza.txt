@@ -1,0 +1,3 @@
+Veja a dica em:
+
+https://www.tutorialspoint.com/dip/grayscale_to_rgb_conversion.htm

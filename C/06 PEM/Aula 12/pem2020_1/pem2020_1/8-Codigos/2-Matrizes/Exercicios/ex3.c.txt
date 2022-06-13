@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int somaAcimaDiagPrincipal(int L, int C, int M[L][C])
+{	if(L != C) return 0;
+	int l, c, soma = 0;
+	for(l=0; l<L; l++)
+	{	for(c=0; c<C; c++)
+		{	if( c > l )
+				soma = soma + M[ l ][ c ];
+		}
+	}
+	return soma;
+}
+
+int main()
+{	int A[4][4] ={{3, 6, 4, 2},
+				 {1, 2, 3, 4},
+				 {0, 6, 9, -1},
+				 {2, 4, 5, 8}};
+
+	printf("\nA soma acima da diagonal principal vale %d\n", somaAcimaDiagPrincipal(4, 4, A));
+	return 0;
+}
+
+

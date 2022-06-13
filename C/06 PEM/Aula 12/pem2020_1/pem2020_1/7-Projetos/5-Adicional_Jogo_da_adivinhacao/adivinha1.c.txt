@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{   int menor=1, maior=1000, meio, resposta;
+    printf("Pense num número entre 1 e 1000:\n\n");
+    
+    do{
+        meio = (menor+maior)/2;
+        printf("O número que você pensou é maior que %d? (1-sim e 2-não)\n", meio);
+        scanf("%d", &resposta);
+        if(resposta==1) //1-sim
+        {   menor = meio + 1;
+        }
+        else //2-não
+        {   maior = meio;
+        }
+    } while(maior>menor);
+    
+    printf("Você pensou no número %d!!!\n", maior);
+
+    return 0;
+}

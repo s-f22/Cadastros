@@ -1,0 +1,17 @@
+1) Você pode usar o IDE (ambiente integrado de desenvolvimento) on-line para a linguagem C através do link :
+
+https://www.onlinegdb.com/
+
+
+2) Ou então, baixe a versão portável do IDE para linguagem C chamado Dev-cpp:
+
+https://drive.google.com/drive/folders/1x2ZKUvXwGeSowSMttSvNSwnVKES52x9p
+
+Se você usa Linux (como o professor ;-), teste o CodeBlocks.
+
+Dicas sobre o Dev-cpp:
+1) Para começar: File - New - Source file
+2) Digite seu programa
+3) Grave-o: File - Save as
+4) Execute-o: Execute - Compile & Run
+

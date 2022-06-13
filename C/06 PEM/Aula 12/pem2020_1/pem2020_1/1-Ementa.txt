@@ -1,0 +1,17 @@
+Programação Estruturada e Modular (Algoritmos 2, a revanche!!!)
+Prof. Carlos Menezes ( cedmenezes@gmail.com / carlos.menezes6@fatec.sp.gov.br )
+
+1) Revisão sobre vetores, strings e matrizes (3 semanas)
+2) Funções e procedimentos (2 semanas)
+3) Recursividade ** (3 semanas)
+4) Estruturas (2 semanas)
+5) Ponteiros e alocação dinâmica ** (2 semanas)
+6) Arquivos em disco (1 semana)
+7) Projeto Final (3 semanas)
+
+Critério de avaliação:
+
+Média final = MÁX {(P1+P2)/2 ; (P1+P3)/2 ; (P2+P3)/2}
+
+Onde P1, P2 são compostas por avaliações escritas, trabalhos práticos ou projetos (com nota variando de 0 a 10).
+P3 será uma prova on-line, com nota variando de 0 a 10.

@@ -1,0 +1,10 @@
+Para quem usa Windows:
+
+1) Vamos usar o Gimp Portável, que pode ser baixado do link:
+
+	https://portableapps.com/apps/graphics_pictures/gimp_portable
+
+2) Alternativamente, você pode instalar a versão convencional:
+
+	https://download.gimp.org/pub/gimp/v2.10/windows/gimp-2.10.20-setup.exe
+

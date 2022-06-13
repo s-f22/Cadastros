@@ -1,0 +1,13 @@
+Aqui colocamos um exemplo de uso de arquivos em modo texto e binário.
+Acrescentamos à agenda feita em exercícios anteriores as funcionalidades de escrever e ler para um arquivo no sistema de arquivos do computador.
+Há uma funcionalidade implementada que escreve um arquivo com a extensão ".csv", que pode ser lida pelo Excel ou OpenOffice Calc.
+ 
+
+
+
+
+Código teste para tentar achar arquivos no Onlinegdb:
+
+https://onlinegdb.com/iIm9zgn57
+
+

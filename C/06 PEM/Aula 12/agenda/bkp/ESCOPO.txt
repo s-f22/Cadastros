@@ -1,0 +1,13 @@
+pegar o cadastro power e fazer com ele, ao sair, salve automaticamente. Nos (programadores) escolheremos o nome e o formato do arquivo
+quando o programa iniciar novamente, ele vai tentar ler o arquivo, carregando assim a base e deixando o programa pré-populado
+
+podemos usar o codigo (anterior) que vai dobrando o tamanho do aramazenamento, caso seja necessario (usando realloc)
+
+3:03:30 inicio explicação do codigo
+
+3:09:30 substituir linha 24 por return;
+
+
+ESCOLHA PELO PROF 3:17:20: CSV, DEPOIS MUDOU PARA GRAVAR TEXTO
+
+instalar o gimp

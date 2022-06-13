@@ -1,0 +1,42 @@
+		Abaixo eu copiei um pedaço de explicação sobre alguns processamentos básicos em imagens que vocês podem aproveitar (especialmente a sobre o contraste):
+
+	https://pt.stackoverflow.com/questions/288648/algoritmo-para-modificar-o-contraste-da-imagem
+
+
+	1) transforme cada canal de cor (r, g, b) em um valor de ponto flutuante de 0 a 1 (basta dividir por 255 ou o maxValor)
+	2) manipule o valor segundo alguma fórmula, como o exemplo a seguir
+
+	//para aumentar o contraste
+	double novo_pixel = 1.0 / (1.0 + exp(-(10.0 * pixel - 5.0)));
+
+	//para diminuir o contraste
+	double novo_pixel = 1.0 / (1.0 + exp(2.0-( * pixel - 1.0)));
+
+	Você pode brincar com as constantes para ver diferentes resultados.
+
+	3) transforme o resultado para 0..255 (ou o maxValor) de volta, e salve/exiba a imagem.
+
+Traduzindo (código PRONTO!!!!!!!!!!!!!!): 
+	#include <math.h>
+	.....
+	//para aumentar o contraste
+	for(l=0; l<linhas; l++)
+	{	for(c=0; c<colunas; c++)
+		{	original[l][c] = maxValor/ (1.0 + exp(-(10.0 * original[l][c]/(float)maxValor - 5.0)));
+	...
+
+ou
+	#include <math.h>
+	....
+	//para diminuir o contraste
+	for(l=0; l<linhas; l++)
+	{	for(c=0; c<colunas; c++)
+		{	original[l][c] = maxValor/ (1.0 + exp(-(2.0 * original[l][c]/(float)maxValor - 1.0)));
+	...
+
+	Você pode tentar outras fórmulas da família "função sigmoide" (tem na Wikipedia. Veja: https://upload.wikimedia.org/wikipedia/commons/6/6f/Gjl-t%28x%29.svg ).
+	Mudar o contraste é criar uma curva de transferência entre o valor original e o valor final, tentando manter os extremos (0 vira 0, 1 vira 1).
+       O contraste é aumentado criando se uma curva em "S", o que aumenta o contraste nos meios tons às custas do contraste nos extremos).
+       Mudar o brilho é adicionar ou diminuir uma constante. Mudar a exposição equivale a multiplicar o valor por uma constante. 
+	Em qualquer caso, valores transformados abaixo de 0 ou acima de 1 devem ser truncados.
+

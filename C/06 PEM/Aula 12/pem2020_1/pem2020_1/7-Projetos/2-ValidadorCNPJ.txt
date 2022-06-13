@@ -1,0 +1,24 @@
+Projeto Validador de CNPJ
+------------------------------------
+
+Este projeto destina-se à fixação dos conceitos aprendidos até aqui (vetores, strings e, especialmente, funções e procedimentos).
+Como a lógica de validação do CNPJ é muito similar à do CPF, você poderá reforçar suas habilidades de programação.
+O algoritmo é explicado no link:
+
+http://www.macoratti.net/alg_cnpj.htm
+
+
+1) No link acima você encontra a explicação do algoritmo usado pela Receita Federal para validação de um CNPJ.
+Estude-o e monte uma planilha em Excel ou Calc para implementar a ideia.
+
+2) Crie um código "base" em C que valida o primeiro dígito verificador. Faça um CTRL+C e CTRL+V com atenção, visto que o algoritmo para o segundo dígito é muito parecido com o do primeiro.
+
+3) Agora vamos melhorar o código anterior com o uso de uma função para validação de um dígito, que você escreverá uma vez e usará duas vezes.
+
+4) Vamos melhorar mais ainda o código anterior trabalhando na nova entrada dos dígitos do CNPJ. Vamos lê-los com uma string e processá-la adequadamente.
+
+
+
+
+
+

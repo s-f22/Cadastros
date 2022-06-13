@@ -1,0 +1,11 @@
+Há vídeo-aulas sobre funções, recursividade, estruturas e ponteiros em linguagem C,  gravados pelo professor da disciplina:
+
+https://www.youtube.com/professorcarlosmenezes
+
+Link de vídeos sobre algoritmos:
+
+https://programacaodescomplicada.wordpress.com/indice/linguagem-c-exercicios-resolvidos
+
+Link de vídeos sobre linguagem C:
+
+https://programacaodescomplicada.wordpress.com/indice/linguagem-c/

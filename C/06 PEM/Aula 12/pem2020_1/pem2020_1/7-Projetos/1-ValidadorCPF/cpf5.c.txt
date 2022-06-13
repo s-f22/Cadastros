@@ -1,0 +1,82 @@
+/*
+	Versão com entrada aprimorada
+*/
+#include<stdio.h>
+#include<stdlib.h>
+#include<stdbool.h>
+#include<string.h>
+#include<locale.h>
+void converter(char entrada[], int cpf[])
+{	int i, j;
+	for(i=0; i<11; i++)
+		cpf[i] = 0;440620
+	i=10; //último índice do vetor cpf
+	j=strlen(entrada)-1;
+	while(j>=0 && i>=0)
+	{	if(entrada[j]>='0' && entrada[j]<='9')
+		{	cpf[i] = entrada[j] - '0';
+			i--;
+		}
+		j--;
+	}
+}
+
+bool repetidos(int cpf[])
+{   int i;
+    for(i=0; i<10; i++)
+    {   if(cpf[i] != cpf[i+1])
+        {   return false;
+        }
+    }
+    return true;
+}
+
+void estadoOrigem(int cpf[])
+{   switch(cpf[8])
+    {   case 0: printf("Rio Grande do Sul\n"); break;
+        case 1: printf("Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul e Tocantins\n"); break;
+        case 2: printf("Amazonas, Pará, Roraima, Amapá, Acre e Rondônia\n"); break;
+        case 3: printf("Ceará, Maranhão e Piauí\n"); break;
+        case 4: printf("Paraíba, Pernambuco, Alagoas e Rio Grande do Norte\n"); break;
+        case 5: printf("Bahia e Sergipe\n"); break;
+        case 6: printf("Minas Gerais\n"); break;
+        case 7: printf("Rio de Janeiro e Espírito Santo\n"); break;
+        case 8: printf("São Paulo\n"); break;
+        case 9: printf("Paraná e Santa Catarina\n");
+    }
+}
+
+bool verificaDigito(int cpf[], int mult[], int N)
+{   int i, soma=0;
+	for(i=0; i<N; i++)
+	{	soma = soma + cpf[i]*mult[i];
+	}
+	int resto = ((soma*10) % 11)%10;
+	return (resto == cpf[N]);
+}
+
+int main()
+{	char entrada[100];
+	int cpf[11];
+	int m1[9]={10,9,8,7,6,5,4,3,2};
+	int m2[10]={11,10,9,8,7,6,5,4,3,2};
+	int i;
+	setlocale(LC_ALL, "Portuguese");
+	printf("Entre com os 11 dígitos do CPF:");
+
+// http://rberaldo.com.br/c-por-que-usar-fgets-em-vez-de-gets/
+
+	fgets(entrada, 100, stdin);
+	converter(entrada, cpf);
+	
+	if( !repetidos(cpf) &&
+        verificaDigito(cpf, m1, 9) &&
+        verificaDigito(cpf, m2, 10) ){
+		printf("\nCPF válido.\n");
+		estadoOrigem(cpf);
+	}
+	else{
+		printf("\nErro no CPF.");
+	}
+	return 0;
+}

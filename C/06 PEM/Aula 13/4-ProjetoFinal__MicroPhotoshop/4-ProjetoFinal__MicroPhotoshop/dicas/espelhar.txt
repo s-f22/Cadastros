@@ -1,0 +1,11 @@
+Código para espelhar uma imagem:
+
+void espelharV(int** original, int linhas, int colunas)
+{	int l,c,aux;
+	for(l=0; l<linhas/2; l++)
+		for(c=0; c<colunas; c++)
+		{	aux = original[l][c];
+			original[l][c] = original[l][linhas - 1 - l];
+			original[l][linhas - 1 - l] = aux;
+		}
+}

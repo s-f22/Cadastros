@@ -1,0 +1,16 @@
+computerphile
+running a buffer overflow
+
+printf("Numero informado: ");
+    	for(i=0; i<11; i++)
+    	{
+    		
+    		printf("%d", cpf[i]);
+    		
+		}
+
+
+mudam m1 e m2
+mudam os tamanhos
+não precis estados de origem
+

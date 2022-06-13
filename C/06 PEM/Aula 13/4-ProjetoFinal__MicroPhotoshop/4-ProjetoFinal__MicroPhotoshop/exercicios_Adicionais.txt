@@ -1,0 +1,50 @@
+Estes são exercícios que caíram em provas passadas:
+#FicaADica
+
+1) Faça uma função que crie uma figura de uma bandeira existente:
+
+https://thumbs.dreamstime.com/b/bandeiras-de-pa%C3%ADses-13821928.jpg
+
+Dicas:
+-Pense numa imagem de 200 linhas por 300 colunas.
+-Para facilitar sua vida, escolha uma bandeira como a do Chade (3 listras verticais: azul, amarelo e vermelho), a da Costa do Marfim (3 listras verticais: laranja, branco e verde), a da França (3 listras verticais: azul, branco e vermelho), etc.
+
+2) Faça uma função que crie uma figura semelhante a isto:
+
+=	=	=	=	=	=	=	=	=	=	=
+										=
+		=	=	=	=	=	=	=		=
+		=						=		=
+		=		=	=	=		=		=
+		=		=		=		=		=
+		=		=				=		=
+		=		=	=	=	=	=		=
+		=								=
+		=	=	=	=	=	=	=	=	=
+
+
+3) Faça uma função recursiva que pinte uma imagem de branco. Ela seria mais ou menos assim:
+
+void pintarBranco(int** original, int linhas, int colunas, int maxValor, int inicioX, int inicioY)
+{ ....	
+
+}
+
+Dicas: 
+	-Se a coordenada inicioX ou inicioY estiver fora da imagem, que tem dimensões 'linhas' e 'colunas', nada será feito
+	-Se na coordenada (inicioX, inicioY) já houver o tom branco (maxValor), nada será feito
+	-Se na coordenada (inicioX, inicioY) não houver o tom branco, pinto com essa cor (maxValor)
+	-Invoco o procedimento recursivo para a coordenada de cima, de baixo, da esquerda e da direita
+	-Pronto!!!
+
+Resposta:
+
+void pintarBranco(int** original, int linhas, int colunas, int maxValor, int inicioX, int inicioY)
+{	if(inicioX>=0 && inicioX<linhas && inicioY>=0 && inicioY<colunas && original[inicioX][inicioY] != maxValor)
+		{	original[inicioX][inicioY] = maxValor;
+			pintarBranco(original, linhas, colunas, maxValor, inicioX+1, inicioY);
+			pintarBranco(original, linhas, colunas, maxValor, inicioX-1, inicioY);
+			pintarBranco(original, linhas, colunas, maxValor, inicioX, inicioY-1);
+			pintarBranco(original, linhas, colunas, maxValor, inicioX, inicioY+1);
+		}
+}

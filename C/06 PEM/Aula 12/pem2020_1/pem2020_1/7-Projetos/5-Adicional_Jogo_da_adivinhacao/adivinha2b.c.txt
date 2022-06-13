@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{   int sorteio, chute, cont=1;
+    srand(time(NULL));
+    printf("Eu vou pensar num número entre 1 e 1000!!\n\n");
+    sorteio = rand()%1000 + 1;
+    do{
+        printf("Tente adivinhar: ");
+        scanf("%d", &chute);
+        
+        if(chute == sorteio) printf("Acertou!!!\n");
+        else
+        {   cont++;
+            if(chute < sorteio) printf("Chutou baixo\n");
+            else printf("Chutou alto\n");
+        }
+        
+    } while(chute != sorteio && cont<=11);
+    
+    if(chute == sorteio)
+        printf("Você precisou de %d tentativas\n\n", cont);
+    else printf("Você não conseguiu em 11 tentativas.... eu tinha pensado no %d\n",
+            sorteio);
+    return 0;
+}

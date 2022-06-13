@@ -1,0 +1,36 @@
+#include<stdio.h>
+/*
+Algoritmo de Newton/Raphson:
+
+Seja N o número do qual você quer extrair a raiz quadrada e seja CANDIDATO = N/2.
+Repetidamente, calcule o NOVO_CANDIDATO com base na fórmula:
+
+NOVO_CANDIDATO = (CANDIDATO² + N)/(2*CANDIDATO)
+
+Repita 10 vezes
+	NOVO_CANDIDATO = (CANDIDATO² + N)/(2*CANDIDATO)
+	CANDIDATO = NOVO_CANDIDATO
+
+Calcule um número fixo de vezes a expressão acima, como, por exemplo, 10 vezes. Será suficiente para a maior parte das situações.
+*/
+
+float minhaRaizQuadrada(float N)
+{   int i;
+    float candidato = N/2, novo;
+    for(i=0; i<10; i++)
+    {   novo = (candidato*candidato + N)/(2*candidato);
+        candidato = novo;
+    }
+
+    return novo;
+}
+
+int main()
+{   float N, raiz;
+    printf("Entre com um numero: ");
+    scanf("%f", &N);
+    raiz = minhaRaizQuadrada(N);
+    printf("\nA raiz quadrada de %f eh %f\n",
+        N, raiz);
+    return 0;
+}

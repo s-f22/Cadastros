@@ -1,0 +1,53 @@
+Estes exercícios caíram em provas:
+
+1) a) Qual o valor de y no final do programa?
+   b) Escreva um /* comentário */ em cada comando de atribuição explicando o que ele faz e o valor da variável à  esquerda do '=' após sua execução.
+   c) Explique o porquê de a atribuição  *q = 10  causar problemas.
+
+#include <stdio.h>
+int main()
+{
+	int x, y, *p, *q;			//x e y são var. inteiras; p e q são var. ponteiro (end. memória)
+	y = 19; 				//y recebe 19
+	p = &y;	 			//p recebe o endereço de memória de y
+	x = *p;				//
+	x = 7;				//x recebe 7
+	(*p)++;				//
+	x--;					//
+	(*p) = (*p) + x; 		//
+	printf ("y = %d\n", y);	//
+	*q = 10;				//
+
+	return 0;
+}
+
+2) Comente o trecho abaixo linha-a-linha e mostre o que será impresso pelo comando printf:
+
+	int a = 10, b = 7, c;		//a recebe 10, b recebe 7, c não inicializado
+	int * p = &a;			//p recebe o endereço de a
+	int * q = &b;			//
+	int * r = &c;			//
+	*r = *p;				//
+	*p = *q;				//
+	*q = *r;				//
+	printf("%d  -  %d", a, b);	//
+
+3) Comente o trecho abaixo linha-a-linha e mostre o que será impresso pelo comando printf:
+
+	int vet[ ] = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 };	
+	int * p = &(vet[2]);							
+	int i;										
+	for ( i = 1; i <= 6; i++ )						
+	{	printf ("%d -  ", *p);						
+		p++;														
+	}										
+	
+Saída: 
+
+4) Por que o primeiro scanf abaixo usa o operador '&' e o segundo não?
+
+	int x;
+	scanf("%d", &x);
+	char nome[50];
+	scanf("%s", nome);
+

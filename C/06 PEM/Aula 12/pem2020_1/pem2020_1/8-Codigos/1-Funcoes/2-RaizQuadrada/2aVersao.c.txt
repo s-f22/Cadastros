@@ -1,0 +1,19 @@
+ #include<stdio.h>
+#include<math.h>
+float minhaRaizQuadrada(float N)
+{   float candidato = N/2, novo, diferenca = 1;
+    while(diferenca > 0.0001)
+    {   novo = (candidato*candidato + N)/(2*candidato);
+        diferenca = fabs(novo - candidato);
+        candidato = novo;
+    }
+    return novo;
+}
+int main()
+{   float N, raiz;
+    printf("Entre com um numero: ");
+    scanf("%f", &N);
+    raiz = minhaRaizQuadrada(N);
+    printf("\nA raiz quadrada de %f eh %f\n", N, raiz);
+    return 0;
+}

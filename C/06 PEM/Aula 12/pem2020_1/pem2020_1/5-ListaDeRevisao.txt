@@ -1,0 +1,95 @@
+1. Dizemos que um inteiro positivo n é perfeito se for igual à soma de seus divisores positivos diferentes de n. Dado um inteiro positivo n, verificar se n é perfeito.
+Exemplo 1: 6 é perfeito, pois 1+2+3 = 6	
+Exemplo 2: 20 não é perfeito, pois 1+2+4+5+10 = 22
+
+
+                       1         100     |___10____
+2. Dado um número natural na base binária, transformá-lo para a base decimal.
+Exemplo: Dado 10010 a saída será 18, pois 1. 2^4 + 0. 2^3 + 0. 2^2 + 1. 2^1 + 0. 2^0 = 18.
+
+10010 |___10__
+        0      1001  |____10___
+                                       0           10        |___10___
+                                                       0               1       |___10___
+                 s
+            <-         0      1   |__2__
+                   <-          1      0
+                          <-
+
+(10010)  == (18)
+            2           10
+
+0 x 1          =         0
+1 x 10         =       10
+0 x 100      =         0
+0 x 1000    =         0
+1 x 10000  = 10000    +
+--------------------------- 
+                     10010
+
+4. Dados n e uma sequência de n números inteiros, determinar quantos segmentos de números iguais consecutivos compõem essa sequência.
+
+Exemplo: A seguinte sequência é formada por 5 segmentos de números iguais: 5, 2, 2, 3, 4, 4, 4, 4, 1, 1
+Ou seja, contarei assim: <<5>>,<< 2, 2>>,<< 3>>,<< 4, 4, 4, 4>>, <<1, 1>> 
+Portanto, tenho 5 grupos.
+
+
+5. Dados n e uma sequência de n números inteiros, determinar o comprimento de um segmento crescente de comprimento máximo.
+Exemplos:
+Na sequência 5, 10, 3, <<2, 4, 7, 9>>, 8, 5 o comprimento do segmento crescente máximo é 4.
+Na sequência 10, 8, 7, 5, 2 o comprimento de um segmento crescente máximo é 1.
+Outra sequência: 6, 4, 9, 10, 12, 13, 5, 2, 4, 8, 16, 32 -> 5
+
+Dica:
+
+#include <stdio.h>
+int main()
+{   int vet[] = {5, 10, 3, 2, 4, 7, 9, 8, 5}, N=9;
+    int tam = 1;
+    int i = 1; //índice do segundo elemento
+    while(i < N)
+    {   if(vet[i] > vet[i-1])
+        {   tam++;
+        }
+        else
+        {   tam = 1;
+        }
+        i++;
+        printf("tam = %d\n", tam);
+    }
+    return 0;
+}
+
+
+6. Dados dois números naturais m e n e duas sequências ordenadas com m e n números inteiros, obter uma única sequência ordenada contendo todos os elementos das sequências originais sem repetição.
+Sugestão: Imagine uma situação real, por exemplo, dois fichários de uma biblioteca.
+Exemplo: 
+Sequência 1:  1, 1, 2, 3, 4, 8, 9
+Sequência 2:  1, 3, 5, 7, 10
+Sequência gerada: 1, 1, 1, 2, 3, 3, 4, 5, 7, 8, 9, 10  (+ fácil)
+Sequência gerada (sem repetição): 1, 2, 3, 4, 5, 7, 8, 9, 10
+
+
+7. Dadas duas sequências com n números inteiros entre 0 e 9, interpretadas como dois números inteiros de n algarismos, calcular a sequência de números que representa a soma dos dois inteiros.
+Exemplo: n = 8,
+		1ª sequência		8 2 4 3 4 2 5 1
+		2ª sequência		3 3 7 5 2 3 3 7  +
+					     -----------------------
+					     1 1 6 1 8 6 5 8 8
+
+
+8. Imprimir as n primeiras linhas do triângulo de Pascal. Você pode fazer com uma matriz ou mesmo utilizando um único vetor.
+Dicas:
+a) a primeira coluna sempre contém 1.
+b) o último elemento de cada linha sempre é 1.
+c) todos os outros elementos podem ser calculados somando-se o de cima com o de cima à esquerda.
+
+1
+1   1
+1   2   1
+1   3   3   1
+1   4   6   4   1
+1   5 10  10   5  1
+1   6 15  20  15  6  1
+1   7  21 35  35  21 7  1
+1   8  28 56  70  56 28 8  1

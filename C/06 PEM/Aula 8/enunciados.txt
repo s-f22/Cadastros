@@ -1,0 +1,264 @@
+professor, na aula passada vc tinha pedido pra relembrar sobre a possibilidade de melhorar a eficiencia do algoritmo que calcula a sequencia de fibonacci, do numero de ouro
+
+1) Faça o teste de mesa para os algoritmos abaixo. Você pode usar o modo de depuração (debug) do ambiente de desenvolvimento Java para lhe ajudar:
+a)
+int alg1 (int n)
+ 
+{    
+   if (n == 0) return 2;
+   else return 2 * alg1 (n - 1) + 3;
+}
+ 
+Suponha que alg1 é invocado p/ n = 4.
+ 
+RESOLUÇÃO:
+ 
+n    alg1(n)
+4    2 * alg1(3) + 3        (else)
+3    2 * alg1(2) + 3        (else)
+2    2 * alg1(1) + 3        (else)
+1    2 * alg1(0) + 3        (else)
+0    2 ( Base de retorno de alg1(n) )        (if)
+1    2 * alg1(0) + 3 => 2 * 2 + 3 = 7
+2    2 * alg1(1) + 3 => 2 * 7 + 3 = 17
+3    2 * alg1(2) + 3 => 2 * 17 + 3 = 37
+4    2 * alg1(3) + 3 => 2 * 37 + 3 = 77
+ 
+b)
+int alg2(int n)
+{
+   if (n == 0) return 1;
+   else return 3 * alg2(n/2) + 1;
+}
+ 
+Suponha que alg2 é invocado com n = 10.
+ 
+n        alg2(n)
+10        =3* alg2(5) + 1        (else)
+5        =3* alg2(2) + 1        (else)
+2        =3* alg2(1) + 1        (else)
+1        =3* alg2(0) + 1        (else)
+0        =1                    (if)
+1        4
+2        13
+5        40
+10        121 (resposta final)
+ 
+c)
+int alg3(int n)
+{
+   if (n <= 0) return 2;
+   else return 2 * alg3(n - 2) + 1;
+}
+ 
+Suponha que alg3 é invocado com n = 7.
+n        alg3(n)
+7        =2 * alg3(5) + 1            (else)
+5        =2 * alg3(3) + 1            (else)
+3        =2 * alg3(1) + 1            (else)
+1        =2 * alg3(-1) + 1            (else)
+-1        =2                        (if)
+1        =5
+3        =11
+5        =23
+7        =47
+ 
+d)
+int alg4(int n)
+{
+   if (n <= 0) return 2;
+   else return  alg4(n - 1) * alg4(n - 2);
+}
+ 
+Suponha que alg4 foi invocado com n = 4.
+ 
+ 
+e)
+int alg5(int n, int k)
+{
+   if(n == 0)  return 0;
+   else return alg5(n - 1, k) + k;
+}
+ 
+Suponha que alg5 é invocado p/ n = 4 e k = 5.
+ 
+
+Resposta = 20
+ 
+
+f)
+int alg6(int n, int k)
+{
+   if(n < k)  return 0;
+   else return      alg6 (n-k, k) + 1;
+}
+ 
+Suponha que alg6 é invocado p/ n = 32 e k = 5. O que faz esse algoritmo? 
+ 
+g)
+int alg7(int n, int k)
+{
+   if(n < k)  return 0;
+   else return alg7(n / k, k) + 1;
+}
+ 
+Suponha que alg7 é invocado p/ n = 32 e k = 2.
+ 
+
+h)
+int alg8(int n, int k)
+{
+   if(n <=  1)  return 0;
+   else return alg8(n - 1, k + 1) + n*k;
+}
+ 
+Suponha que alg8 é invocado p/ n = 4 e k = 1.
+ 
+ 
+
+2) Crie uma função recursiva que calcule potenciações através de multiplicações sucessivas:
+ 
+    x^y = x * x * x * x ......* x   --> y vezes
+
+    Matematicamente, x^0 = 1  e  x^y = x * x^(y-1)
+ 
+a) Base: expoente == 0 -> resultado = 1
+b) x^(y-1) é mais simples
+c) x^y = x * x^(y-1)
+ 
+ 
+3) Crie uma função recursiva que calcule multiplicações através de somas sucessivas:
+ 
+    x*y = x + x + x + x ...... + x   -> y vezes
+ 
+    Matematicamente, x*0 = 0  e  x*y = x + x*(y-1)
+ 
+a) Base: y == 0 -> resultado = 0
+b) x*(y-1) é mais simples
+c)  x*y = x + x*(y-1)
+ 
+ 
+4) Calcule recursivamente o valor da expressão: expressao(n) = 1/1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6 + ...+ 1/(n-1) + 1/n
+a)  n=1 -> expressao(1) = 1/1
+    n=2 -> expressao(2) = 1/1 + 1/2
+    n=3 -> expressao(3) = 1/1 + 1/2 + 1/3
+    n=4 -> expressao(4) = 1/1 + 1/2 + 1/3 + 1/4
+ 
+Situação (instância) mais simples: n=1 -> expressao(1) = 1.0
+ 
+b) expressao(n) = 1/1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6 + ...+ 1/(n-1) + 1/n
+A um pouco mais simples: expressao(n-1) = 1/1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6 + ...+ 1/(n-1) 
+ 
+c) expressao(n) = expressao(n-1) + 1/n
+ 
+
+5) Crie uma função recursiva que calcule divisões através de subtrações sucessivas:
+ 
+    x/y = número de vezes que consigo subtrair y de x (x - y - y - y - y ...... >= 0)
+ 
+    Matematicamente,    se x < y  --> resposta = 0
+                    caso contrário, x / y = ((x-y)/y) + 1
+ 
+
+a) Mais simples de todos: x < y -------> 0
+b) Um pouco mais simples: (x-y)/y
+c) x / y=((x-y)/y)+1
+ 
+
+6) Ache recursivamente a soma dos números ímpares positivos até n:
+ 
+1 + 3 + 5 + 7 + 9 + 11 + .... n (n ímpar)
+ou
+1 + 3 + 5 + 7 + 9 + 11 + .... n-1 (n par)
+ 
+
+7) Crie uma função recursiva que calcule logaritmos através de divisões sucessivas:
+ 
+    logaritmo x na base y = número de vezes que consigo dividir x por y
+ 
+    Matematicamente,    se x < y  --> resposta = 0
+                    caso contrário, log x na base y = (log de (x/y) na base y) + 1
+ 
+Resolução:
+ 
+Qual é o logaritmo de 1000 na base 10? De outra maneira, qual é o expoente que eu coloco na base 10 para virar 1000?
+Resposta = 3
+Qual é o logaritmo de 32 na base 2? De outra maneira, qual é o expoente que eu coloco na base 2 para virar 32?
+Resposta = 5
+ 
+ 
+8) Crie uma função recursiva que converta um número binário em decimal.
+ 
+ 
+
+9) Crie uma função recursiva que converta um número decimal em binário.
+ 
+ 
+10) Crie uma função recursiva que procure um número dentro de um vetor, a partir de um dado índice. Se achar o mesmo, o método retorna o índice onde ele se encontra, senão, retorna -1 (busca linear recursiva).
+ 
+-> Só para entendermos melhor o problema, a versão interativa (não-recursiva) seria assim:
+ 
+    int busca(int vet[ ], int N, int indiceInicio, int procurado)
+    {    int i;
+        for(i=indiceInicio; i < N; i++)
+        {    if(procurado == vet[i])
+            {    return i;
+            }
+        }
+        return -1;
+    }
+ 
+    Agora vamos pensar na versão recursiva.... 
+ 
+int buscaRecursiva(int vet[ ], int N, int indiceInicio, int procurado)
+{    if(indiceInicio >= N) return -1;
+    else if(vet[indiceInicio] == procurado) return indiceInicio;
+    else return buscaRecursiva(vet, N, indiceInicio + 1, procurado);
+}
+ 
+
+11) Crie um método recursivo que retorne o maior elemento de um vetor.
+ 
+int maior(int vet[], int inicio, int N)
+{    if(inicio == N-1) return vet[inicio];
+    else
+    {    int maiorDoResto = maior(vet, inicio+1, N);
+        if(vet[inicio] > maiorDoResto) return vet[inicio];
+        else return maiorDoResto;
+    }
+}
+ 
+
+12) Crie uma função recursiva para calcular o máximo divisor comum (MDC) entre dois números inteiros, usando o algoritmo de Euclides.
+ 
+
+13) Torre de Hanói
+ 
+"Édouard Lucas teve inspiração de uma lenda para construir o jogo das Torres de Hanói em 1883[1]. Já seu nome foi inspirado na torre símbolo da cidade de Hanói, no Vietnã[2]. Existem várias lendas a respeito da origem do jogo, a mais conhecida diz respeito a um templo Hindu, situado no centro do universo. Diz-se que Fuças supostamente havia criado uma torre com 64 discos de ouro e mais duas estacas equilibradas sobre uma plataforma. Fuças ordenara-lhes que movessem todos os discos de uma estaca para outra segundo as suas instruções. As regras eram simples: apenas um disco poderia ser movido por vez e nunca um disco maior deveria ficar por cima de um disco menor. Segundo a lenda, quando todos os discos fossem transferidos de uma estaca para a outra, o templo desmoronar-se-ia e o mundo desapareceria. Dessa forma criaria-se um novo mundo, o mundo de Hanói." (Wikipedia)
+      É possível fazer uma solução recursiva para o problema de um jeito bem simples:
+ 
+Base da Recursão: resolver o quebra-cabeças com um disco é trivial, bastando fazer um movimento e pronto!
+Caso Geral: se sei resolver o quebra-cabeças para N-1 discos fica fácil resolvê-lo para N discos. Transporto N-1 discos para o pino auxiliar (eu disse que sabia resolver para N-1 discos!), transporto o disco maior que sobrou para o pino destino e, finalmente, transporto os N-1 discos do pino auxiliar para o pino destino (novamente eu disse que sabia resolver para N-1 discos!).
+ 
+      Veja como fica a implementação:
+ 
+#include<stdio.h>
+void hanoi (int n, char origem, char destino, char auxiliar) 
+{ 
+         if(n==1) printf("Mova o disco do pino %c para o pino %c\n", origem, destino); 
+         else{ 
+            hanoi(n-1, origem, auxiliar, destino);  //transporto N-1 discos da origem para o auxiliar
+            printf("Mova o disco do pino %c para o pino %c\n", origem, destino);  
+            hanoi(n-1, auxiliar, destino, origem);  //transporto N-1 discos do auxiliar para o destino
+         } 
+}    
+int main () 
+{ 
+         printf("Resolvendo a Torre de Hanoi para 3 discos:\n"); 
+         hanoi(3, 'A', 'C', 'B'); 
+
+         printf("Resolvendo a Torre de Hanoi para 4 discos:\n"); 
+         hanoi(4, 'A', 'C', 'B');
+         return 0;
+} 
+ 

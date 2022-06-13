@@ -1,0 +1,75 @@
+Para resolvermos um algoritmo por recursividade, tente responder às 3 perguntas abaixo. Cada uma fornecerá uma parte da solução:
+
+1) Qual é a instância  mais simples do problema?
+-> Isso fornecerá a base da recursão!!
+
+2) O que é só um pouco mais simples que resolver o problema original?
+-> Usaremos para escrever o caso geral da recursão
+
+3) Se lhe fornecêssemos a solução do problema mais simples (o da pergunta 2), você conseguiria resolver o problema original? Como?
+-> Isso é suficiente para escrever o caso geral da recursividade
+
+Exemplo: quero calcular o fatorial de N
+
+1)  Qual é a instância mais simples do problema?
+-> Fatorial de 0, que é 1.
+
+2) O que é só um pouco mais simples que resolver o problema original?
+-> Resolver o fatorial de N-1.
+
+3) Se lhe fornecêssemos a solução do problema um pouco mais simples (o da pergunta 2), você conseguiria resolver o problema original? Como?
+-> O fatorial de N é igual a N * Fatorial de (N-1).
+
+Assim, o código fica:
+
+int fatorial (int N)
+{
+	if(N==0) return 1;
+	else return N * fatorial(N-1);
+}
+
+Outro exemplo:
+--------------------
+
+Calcular a soma dos inteiros positivos até N, ou seja, 0 + 1 + 2 + 3 + 4 + ... + (N-1) + N, usando uma função recursiva.
+
+1)  Qual é a instância  mais simples do problema?
+-> A soma dos inteiros até 0, que resulta 0.
+
+2) O que é só um pouco mais simples que resolver o problema original?
+-> Achar a soma até (N-1):  0 + 1 + 2 + 3 + 4 + ... + (N-1)
+
+3) Se lhe fornecêssemos a solução do problema mais simples (o da pergunta 2), você conseguiria resolver o problema original? Como?
+-> Sabendo a soma até (N-1), basta somar N para achar a soma até N.
+
+Assim, o código fica:
+
+int soma (int N)
+{
+	if(N==0) return 0;
+	else return N + soma(N-1);
+}
+
+Outro exemplo:
+--------------------
+
+Calcular a expressão: 0/1 + 1/2 + 2/3 + 3/4 + .... + (N-1)/N + N/(N+1)
+
+1)  Qual é a instância mais simples do problema?
+-> A soma das frações até que N seja 0, o que resulta em 0.0.
+
+2) O que é só um pouco mais simples que resolver o problema original?
+-> Achar a expressão até (N-1): 0/1 + 1/2 + 2/3 + 3/4 + .... + (N-1)/(N)
+
+3) Se lhe fornecêssemos a solução do problema mais simples (o da pergunta 2), você conseguiria resolver o problema original? Como?
+-> Sabendo a soma até (N-1), basta somar N/(N+1) para achar a soma até N.
+
+Assim, o código fica:
+
+float expressao(int N) 
+{
+	if(N==0) return 0.0;
+	else return (float)N/(N+1) + expressao(N-1);
+}
+
+

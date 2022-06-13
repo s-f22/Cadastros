@@ -1,0 +1,7 @@
+1- O que são listas e quais suas utilizações?
+
+2- Qual a difirença entre lista simplesmente ligada, circular e duplamente ligada ?
+
+3-Escreva uma programa de lista encadeada simples que armazene dois valores no tad minimo e maximo 
+
+4-Crie uma função para listar a menor valor para minimo de todas as ocorrencias e o maior valor para o maximo de todas as ocorrencias

@@ -1,0 +1,12 @@
+1- O que são listas e quais suas utilizações?
+R- listas são estrutura dinamicas de dados, que permitem acesso de qualquer direção ao seus elementos não possuindo uma regra para adicionar ou remover elementos.
+
+2- Qual a difirença entre lista simplesmente ligada, circular e duplamente ligada ?
+Lista simplesmente ligada - cada elemento faz referencia ao endereço de memoria do proximo, o ultimo elemento tem NULL como endereço do proximo 
+Lista circular - cada elemento faz referencia ao endereço de memoria do proximo, o ultimo elemento tem como refferencia o endereço do primeiro elemento.
+Lista duplamente ligada - tem duas referencias, o endereço do anterior e o endereço do proximo elemento onde o primeiro item da lista vai ter NULL para a refencia do anterior e o ultimo elemento da lista vai ter NULL para o endere do proximo.
+
+
+3-Escreva uma programa de lista encadeada simples que armazene dois valores no tad minimo e maximo 
+
+4-Crie uma função para listar a menor valor para minimo de todas as ocorrencias e o maior valor para o maximo de todas as ocorrencias

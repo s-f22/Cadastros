@@ -1,0 +1,32 @@
+1-Implemente uma lista circular que represente o gerenciamento de processamento de um sistema operacional, além das funções para adicionar, remover e listar, implemente uma função chamada de processar, que fara um laço enquanto tiver elementos na lista e deduzira -1 do atributo carga do TAD processo, quando carga for igual a 0 chame o metodo para remover o item da lista. Removendo todos os processos da lista encerre o laço
+
+ 
+
+typedef struct processo {
+
+
+  int pid;
+
+  int carga;
+
+  struct processo *prox;
+
+} Processo;
+
+
+
+
+2-Implemente uma lista duplamente encadeada para simular uma rede social de pessoas conhecidas, implemente todas as funções
+
+
+
+typedef struct pessoa {
+
+
+  char[30] nome;
+
+  struct pessoa *ant;
+
+  struct pessoa *prox;
+
+} Pessoa;

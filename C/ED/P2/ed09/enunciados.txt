@@ -1,0 +1,5 @@
+1- O que é uma árvore binária e quais seus componentes?
+
+2-Qual a diferença entre uma AB e uma ABB ?
+
+3-Usando o primeiro exemplo de  AB implemente uma função para contar a altura de uma arvore

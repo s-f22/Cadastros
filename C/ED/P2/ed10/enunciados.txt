@@ -1,0 +1,5 @@
+Utilizando o exemplo ed10, implemente as seguintes funçoes recursivas:
+
+1-Conte a quantidade total de elementos
+2-mostre o maior valor entre todos os itens
+3-mostre o menor valor entre todos os itens

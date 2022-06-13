@@ -1,0 +1,10 @@
+Aluno: Samuel Figueiredo
+ED04
+
+1-O que e um Tipo Abstrato de Dados (TAD) e qual a caracterıstica fundamental na sua
+utilização?
+São tipos de dados que podem ser criados pelo próprio programador C para conseguir representar informações de uma forma mais direta que utilizando apenas os tipos nativos da linguagem C. Como caracteristica fundamental, sua utilização é semelhante a de ponteiros ou vetores.
+
+
+2. Quais as vantagens de se programar com TADs?
+Em algumas situações, os tipos nativos não representam adequadamente as informações que o programador precisa representar, sendo as TADs uma boa opção para estes casos. Além disso, elas permitem o agrupamento de dados, tornando o código robusto e organizado.

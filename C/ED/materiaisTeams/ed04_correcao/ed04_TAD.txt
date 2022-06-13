@@ -1,0 +1,20 @@
+1-O que e um Tipo Abstrato de Dados (TAD) e qual a 
+caracterıstica fundamental na sua utilização?
+R- E uma estrutura heterogenea de dados que permite
+a utilização de estruturas complexas que podem ser 
+utilizadas como tipos atraves de variaveis, ponteiros
+e vetores.
+
+2. Quais as vantagens de se programar com TADs?
+R- Flexibilidade na criação de programas complexos
+que precisam de estuturas heterogeneas para implementar
+pilhas, filas, arvores e outras estruturas.
+
+
+3. Crie um TAD que implemente o controle de uma 
+conta bancaria, implemente funções para inicializar, 
+deposito, sacar e imprimir o saldo.
+
+
+4. Utilizando a alocação dinamica de memoria crie 
+uma função para criar uma nova conta bancaria
